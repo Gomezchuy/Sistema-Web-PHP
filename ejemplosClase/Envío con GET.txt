@@ -1,0 +1,5 @@
+Envío con GET
+----------------
+recibe.php?variable1=valor1&variable2=valor2
+
+elimina.php?id=5

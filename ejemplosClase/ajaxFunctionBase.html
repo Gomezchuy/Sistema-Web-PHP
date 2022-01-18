@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Ajax / Jquery</title>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script>
+            function eliminaFilas(fila){
+                $.ajax({
+                    url : 'respuesta.php',
+                    type : 'post',
+                    dataType : 'text',
+                    data : 'id='+fila,
+                    success : function(res){
+                        if(res==1){
+                            $('#mensaje').html('Fila eliminada.');
+                        }else{
+                            $('#mensaje').html('Error en la eliminación.');
+                        }
+                    },error:function(){
+                        alert('Error archivo no encontrado...');
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <a href="javascript:void(0);" onClick="eliminaFilas(8);">Eliminar Filas</a><br>
+        <div id="mensaje" style="color: #F00;font-size: 16px;"></div>
+    </body>
+</html>
